@@ -1,0 +1,42 @@
+---
+- hosts: influx
+  remote_user: "{{ remote_user }}"
+  sudo: yes
+  roles:
+    - influx
+
+- hosts: grafana
+  remote_user: "{{ remote_user }}"
+  sudo: yes
+  roles:
+    - grafana
+
+- hosts: riemann
+  remote_user: "{{ remote_user }}"
+  sudo: yes
+  roles:
+    - riemann
+
+- hosts: zookeeper
+  remote_user: "{{ remote_user }}"
+  sudo: yes
+  roles:
+    - zookeeper
+
+- hosts: kafka
+  remote_user: "{{ remote_user }}"
+  sudo: yes
+  roles:
+    - kafka
+
+- hosts: datomic
+  remote_user: "{{ remote_user }}"
+  sudo: yes
+  roles:
+    - datomic
+
+- hosts: onyx-dashboard
+  remote_user: "{{ remote_user }}"
+  sudo: yes
+  roles:
+    - onyx-dashboard

@@ -1,0 +1,23 @@
+---
+- name: Install Riemann config
+  template:
+    src: riemann.config
+    dest: /srv/riemann.config
+    owner: "{{ remote_user }}"
+    group: "{{ remote_user }}"
+    mode: 0555
+
+- name: Run Riemann container
+  docker:
+    name: riemann
+    image: rlister/riemann:latest
+    net: host
+    detach: yes
+    state: restarted
+    restart_policy: always
+    restart_policy_retry: 128
+    volumes:
+      - /srv/riemann.config:/app/etc/riemann.config
+
+- name: Wait for Riemann to come up
+  wait_for: port=5555 delay=5 timeout=60

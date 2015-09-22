@@ -1,0 +1,20 @@
+---
+- name: Run Onyx Dashboard container
+  docker:
+    name: onyx-dashboard
+    image: onyx/onyx-dashboard:f1e1dc4e396b9f24589878f56ebe46fe745b25a5
+    detach: yes
+    state: restarted
+    publish_all_ports: yes
+    restart_policy: always
+    restart_policy_retry: 128
+    publish_all_ports: yes
+    expose:
+      - '3000'
+    ports:
+      - '8085:3000'
+    env:
+      ZOOKEEPER_ADDR: "{{ groups.zookeeper | join(',') }}"
+
+- name: Wait for Onyx Dashboard to come up
+  wait_for: port=8085 delay=5 timeout=60

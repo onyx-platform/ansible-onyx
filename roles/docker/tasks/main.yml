@@ -1,0 +1,24 @@
+---
+- name: Check if Docker is installed
+  command: dpkg-query -l docker-engine
+  register: is_installed
+  failed_when: is_installed.rc > 1
+  changed_when: no
+
+- name: Install Docker
+  shell: wget -qO- https://get.docker.com/ | sh
+  when: is_installed.rc == 1
+
+- name: Allow non-sudo Docker access
+  shell: "usermod -aG docker {{ remote_user }}"
+
+- name: Install Pip
+  apt:
+    name: python-pip
+    state: present
+
+- name: Install docker-py
+  shell: pip install docker-py==1.1.0
+
+- name: Install httplib2
+  shell: pip install httplib2

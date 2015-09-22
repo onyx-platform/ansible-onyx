@@ -1,0 +1,866 @@
+{
+    "overwrite": true,
+    "dashboard":
+    {
+        "id": null,
+        "title": "Onyx Peer Internal Monitoring",
+        "originalTitle": "Onyx Peer Internal Monitoring",
+        "tags": [],
+        "style": "dark",
+        "timezone": "browser",
+        "editable": true,
+        "hideControls": false,
+        "sharedCrosshair": false,
+        "rows": [
+            {
+                "collapse": false,
+                "editable": true,
+                "height": "250px",
+                "panels": [
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 1,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": false,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 1,
+                        "points": true,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "mean",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [],
+                                "measurement": "peer.ack-segments.latency",
+                                "query": "SELECT mean(value) FROM \"peer.ack-segments.latency\" WHERE $timeFilter GROUP BY time($interval)",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Peer Ack Segments Latency",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 2,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "mean",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [],
+                                "measurement": "peer.retry-segment.latency",
+                                "query": "SELECT mean(value) FROM \"peer.retry-segment.latency\" WHERE $timeFilter GROUP BY time($interval)",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Peer Retry Segment Latency",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 3,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": false,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 1,
+                        "points": true,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "mean",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [],
+                                "measurement": "peer.complete-message.latency",
+                                "query": "SELECT mean(value) FROM \"peer.complete-message.latency\" WHERE $timeFilter GROUP BY time($interval)",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Peer Complete Message Latency",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    }
+                ],
+                "title": "Row"
+            },
+            {
+                "collapse": false,
+                "editable": true,
+                "height": "250px",
+                "panels": [
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 4,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": false,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 1,
+                        "points": true,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "sum",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [],
+                                "measurement": "peer.strip-sentinel.event",
+                                "query": "SELECT sum(value) FROM \"peer.strip-sentinel.event\" WHERE $timeFilter GROUP BY time($interval)",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Peer Strip Sentinel",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 5,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": false,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 1,
+                        "points": true,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "sum",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [],
+                                "measurement": "peer.try-complete-job.event",
+                                "query": "SELECT sum(value) FROM \"peer.try-complete-job.event\" WHERE $timeFilter GROUP BY time($interval)",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Peer Try Complete Job",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 6,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": false,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 1,
+                        "points": true,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "sum",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [],
+                                "measurement": "peer.gc-peer-link.event",
+                                "query": "SELECT sum(value) FROM \"peer.gc-peer-link.event\" WHERE $timeFilter GROUP BY time($interval)",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Peer GC Peer Link",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    }
+                ],
+                "title": "New row"
+            },
+            {
+                "collapse": false,
+                "editable": true,
+                "height": "250px",
+                "panels": [
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 7,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": false,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 1,
+                        "points": true,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "sum",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [],
+                                "measurement": "peer.prepare-join.event",
+                                "query": "SELECT sum(value) FROM \"peer.prepare-join.event\" WHERE $timeFilter GROUP BY time($interval)",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Peer Prepare Join",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 8,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": false,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 1,
+                        "points": true,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "sum",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [],
+                                "measurement": "peer.accept-join.event",
+                                "query": "SELECT sum(value) FROM \"peer.accept-join.event\" WHERE $timeFilter GROUP BY time($interval)",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Peer Accept Join",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 9,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": false,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 1,
+                        "points": true,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "sum",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [],
+                                "measurement": "peer.notify-join.event",
+                                "query": "SELECT sum(value) FROM \"peer.notify-join.event\" WHERE $timeFilter GROUP BY time($interval)",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Peer Notify Join",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    }
+                ],
+                "title": "New row"
+            },
+            {
+                "collapse": false,
+                "editable": true,
+                "height": "250px",
+                "panels": [
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 10,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": false,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 1,
+                        "points": true,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "sum",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [],
+                                "measurement": "peer.backpressure-on.event",
+                                "query": "SELECT sum(value) FROM \"peer.backpressure-on.event\" WHERE $timeFilter GROUP BY time($interval)",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Peer Backpressure On",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 11,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": false,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 1,
+                        "points": true,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "sum",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [],
+                                "measurement": "peer.backpressure-off.event",
+                                "query": "SELECT sum(value) FROM \"peer.backpressure-off.event\" WHERE $timeFilter GROUP BY time($interval)",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Peer Backpressure Off",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    }
+                ],
+                "title": "New row"
+            }
+        ],
+        "nav": [
+            {
+                "collapse": false,
+                "enable": true,
+                "notice": false,
+                "now": true,
+                "refresh_intervals": [
+                    "5s",
+                    "10s",
+                    "30s",
+                    "1m",
+                    "5m",
+                    "15m",
+                    "30m",
+                    "1h",
+                    "2h",
+                    "1d"
+                ],
+                "status": "Stable",
+                "time_options": [
+                    "5m",
+                    "15m",
+                    "1h",
+                    "6h",
+                    "12h",
+                    "24h",
+                    "2d",
+                    "7d",
+                    "30d"
+                ],
+                "type": "timepicker"
+            }
+        ],
+        "time": {
+            "from": "now-15m",
+            "to": "now"
+        },
+        "templating": {
+            "list": []
+        },
+        "annotations": {
+            "list": []
+        },
+        "refresh": "5s",
+        "schemaVersion": 6,
+        "version": 33,
+        "links": []
+    }
+}

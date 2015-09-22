@@ -1,0 +1,10 @@
+{
+    "name": "InfluxDB",
+    "type": "influxdb",
+    "url": "http://localhost:8086",
+    "access": "proxy",
+    "basicAuth": false,
+    "database": "grafana",
+    "user": "root",
+    "password": "root"
+}

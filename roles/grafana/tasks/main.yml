@@ -1,0 +1,63 @@
+---
+- name: Run Grafana container
+  docker:
+    name: grafana
+    image: grafana/grafana
+    net: host
+    detach: yes
+    state: restarted
+    restart_policy: always
+    restart_policy_retry: 128
+    env:
+      GF_HTTP_ADDR: 0.0.0.0
+
+- name: Wait for Grafana to come up
+  wait_for: port=3000 delay=5 timeout=60
+
+- name: Get Grafana datasources
+  uri:
+    url: http://localhost:3000/api/datasources
+    method: GET
+    user: admin
+    password: admin
+    force_basic_auth: yes
+    status_code: 200
+  register: datasources
+
+- name: Count the Grafana datasources
+  set_fact:
+    matched_datasources: "{{ datasources.json | selectattr('name', 'equalto', 'InfluxDB') | list | length }}"
+
+- name: Register InfluxDB datasource
+  uri:
+    url: http://localhost:3000/api/datasources
+    method: POST
+    user: admin
+    password: admin
+    body: "{{ lookup('file','register_datasource.json') }}"
+    force_basic_auth: yes
+    status_code: 200
+    HEADER_Content-type: application/json
+  when: matched_datasources != "1"
+
+- name: Load Onyx ZooKeeper Monitoring dashboard
+  uri:
+    url: http://localhost:3000/api/dashboards/db
+    method: POST
+    user: admin
+    password: admin
+    body: "{{ lookup('file','onyx_zookeeper_monitoring.json') }}"
+    force_basic_auth: yes
+    status_code: 200
+    HEADER_Content-type: application/json
+
+- name: Load Onyx Peer Monitoring dashboard
+  uri:
+    url: http://localhost:3000/api/dashboards/db
+    method: POST
+    user: admin
+    password: admin
+    body: "{{ lookup('file','onyx_peer_monitoring.json') }}"
+    force_basic_auth: yes
+    status_code: 200
+    HEADER_Content-type: application/json

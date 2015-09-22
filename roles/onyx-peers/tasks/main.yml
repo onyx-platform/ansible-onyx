@@ -1,0 +1,19 @@
+---
+- name: Run the Onyx Peers container
+  docker:
+    name: onyx_peers
+    image: "{{ dockerhub_image }}"
+    net: host
+    detach: yes
+    state: restarted
+    restart_policy: always
+    restart_policy_retry: 128
+    command: "launch-peers {{ onyx_mode }} {{ onyx_id }} {{ n_peers}}"
+    email: "{{ dockerhub_email }}"
+    username: "{{ dockerhub_username }}"
+    password: "{{ dockerhub_password }}"
+    env:
+      ONYX_ZOOKEEPER_ADDRESS: "{{ groups.zookeeper | join(',') }}"
+      ONYX_RIEMANN_HOST: "{{ groups.riemann | first }}"
+      ONYX_RIEMANN_PORT: 5555
+      ONYX_PEER_HOST: "{{ inventory_hostname }}"

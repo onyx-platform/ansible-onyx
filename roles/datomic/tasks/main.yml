@@ -1,0 +1,60 @@
+---
+- name: Drop the Datomic durable data
+  file:
+    path: "{{ datomic_data_dir }}"
+    state: absent
+  when: "{{ refresh_datomic }}"
+
+- name: Create the durable Datomic data directory
+  file:
+    path: "{{ datomic_data_dir }}"
+    state: directory
+    mode: 0755
+    recurse: yes
+
+- name: Kill the Datomic container
+  docker:
+    name: datomic
+    image: akiel/datomic-free:0.9.5206
+    state: killed
+  when: "{{ refresh_datomic }}"
+
+- name: Kill the Datomic data container
+  docker:
+    name: datomic_data
+    image: alpine:3.2
+    state: killed
+  when: "{{ refresh_datomic }}"
+
+- name: Create the Datomic data container
+  docker:
+    name: datomic_data
+    image: alpine:3.2
+    detach: yes
+    state: restarted
+    restart_policy: always
+    restart_policy_retry: 128
+    command: echo 'Datomic data container'
+    volumes:
+      - "{{ datomic_data_dir }}:/data"
+
+- name: Run Datomic container
+  docker:
+    name: datomic
+    image: akiel/datomic-free:0.9.5206
+    net: host
+    detach: yes
+    state: restarted
+    restart_policy: always
+    restart_policy_retry: 128
+    volumes_from:
+      - datomic_data
+
+- name: Wait for Datomic to come up
+  wait_for: port=4334 delay=5 timeout=60
+
+- name: Wait for Datomic to come up
+  wait_for: port=4335 delay=5 timeout=60
+
+- name: Wait for Datomic to come up
+  wait_for: port=4336 delay=5 timeout=60

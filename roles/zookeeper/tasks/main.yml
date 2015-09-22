@@ -1,0 +1,57 @@
+---
+- name: Drop the ZooKeeper durable data
+  file:
+    path: "{{ zookeeper_data_dir }}"
+    state: absent
+  when: "{{ refresh_zookeeper }}"
+
+- name: Create the durable ZooKeeper data directory
+  file:
+    path: "{{ zookeeper_data_dir }}"
+    state: directory
+    mode: 0755
+    recurse: yes
+
+- name: Kill the ZooKeeper container
+  docker:
+    name: zookeeper
+    image: mesoscloud/zookeeper:3.4.6-ubuntu-14.04
+    state: killed
+  when: "{{ refresh_zookeeper }}"
+
+- name: Kill the ZooKeeper data container
+  docker:
+    name: zookeeper_data
+    image: alpine:3.2
+    state: killed
+  when: "{{ refresh_zookeeper }}"
+
+- name: Create the ZooKeeper data container
+  docker:
+    name: zookeeper_data
+    image: alpine:3.2
+    detach: yes
+    state: restarted
+    restart_policy: always
+    restart_policy_retry: 128
+    command: echo 'ZooKeeper data container'
+    volumes:
+      - "{{ zookeeper_data_dir }}:/tmp/zookeeper"
+
+- name: Run the ZooKeeper container
+  docker:
+    name: zookeeper
+    image: mesoscloud/zookeeper:3.4.6-ubuntu-14.04
+    net: host
+    detach: yes
+    state: restarted
+    restart_policy: always
+    restart_policy_retry: 128
+    volumes_from:
+      - zookeeper_data
+    env:
+      MYID: "{{ groups.zookeeper | natural_index_of(inventory_hostname) }}"
+      SERVERS: "{{ groups.zookeeper | join(',') }}"
+
+- name: Wait for ZooKeeper to come up
+  wait_for: port=2181 delay=5 timeout=60

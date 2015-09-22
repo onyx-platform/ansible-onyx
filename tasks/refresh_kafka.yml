@@ -1,0 +1,6 @@
+---
+- hosts: kafka
+  remote_user: "{{ remote_user }}"
+  sudo: yes
+  roles:
+    - { role: kafka, refresh_kafka: yes }

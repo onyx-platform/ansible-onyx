@@ -1,0 +1,6 @@
+---
+- hosts: onyx-peers
+  remote_user: "{{ remote_user }}"
+  sudo: yes
+  roles:
+    - onyx-peers

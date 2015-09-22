@@ -1,0 +1,2592 @@
+{
+    "overwrite": true,
+    "dashboard":
+    {
+        "id": null,
+        "title": "Onyx ZooKeeper Internal Monitoring",
+        "originalTitle": "Onyx ZooKeeper Internal Monitoring",
+        "tags": [],
+        "style": "dark",
+        "timezone": "browser",
+        "editable": true,
+        "hideControls": false,
+        "sharedCrosshair": false,
+        "rows": [
+            {
+                "collapse": false,
+                "editable": true,
+                "height": "250px",
+                "panels": [
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 1,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "mean",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [
+                                    "host"
+                                ],
+                                "measurement": "zookeeper.write-log-entry.latency",
+                                "query": "SELECT mean(value) FROM \"zookeeper.write-log-entry.latency\" WHERE $timeFilter GROUP BY time($interval), \"host\"",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Zookeeper Write Log Entry Latency",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 2,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "mean",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [
+                                    "host"
+                                ],
+                                "measurement": "zookeeper.write-log-entry.bytes",
+                                "query": "SELECT mean(value) FROM \"zookeeper.write-log-entry.bytes\" WHERE $timeFilter GROUP BY time($interval), \"host\"",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Zookeeper Write Log Entry Bytes",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 3,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "mean",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [
+                                    "host"
+                                ],
+                                "measurement": "zookeeper.read-log-entry.latency",
+                                "query": "SELECT mean(value) FROM \"zookeeper.read-log-entry.latency\" WHERE $timeFilter GROUP BY time($interval), \"host\"",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Zookeeper Read Log Entry Latency",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    }
+                ],
+                "title": "Row"
+            },
+            {
+                "collapse": false,
+                "editable": true,
+                "height": "250px",
+                "panels": [
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 4,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "mean",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [
+                                    "host"
+                                ],
+                                "measurement": "zookeeper.write-workflow.latency",
+                                "query": "SELECT mean(value) FROM \"zookeeper.write-workflow.latency\" WHERE $timeFilter GROUP BY time($interval), \"host\"",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Zookeeper Write Workflow Latency",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 5,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "mean",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [
+                                    "host"
+                                ],
+                                "measurement": "zookeeper.write-workflow.bytes",
+                                "query": "SELECT mean(value) FROM \"zookeeper.write-workflow.bytes\" WHERE $timeFilter GROUP BY time($interval), \"host\"",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Zookeeper Write Workflow Bytes",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 6,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "mean",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [
+                                    "host"
+                                ],
+                                "measurement": "zookeeper.read-workflow.latency",
+                                "query": "SELECT mean(value) FROM \"zookeeper.read-workflow.latency\" WHERE $timeFilter GROUP BY time($interval), \"host\"",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Zookeeper Read Workflow Latency",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    }
+                ],
+                "title": "New row"
+            },
+            {
+                "collapse": false,
+                "editable": true,
+                "height": "250px",
+                "panels": [
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 7,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "mean",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [
+                                    "host"
+                                ],
+                                "measurement": "zookeeper.write-catalog.latency",
+                                "query": "SELECT mean(value) FROM \"zookeeper.write-catalog.latency\" WHERE $timeFilter GROUP BY time($interval), \"host\"",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Zookeeper Write Catalog Latency",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 8,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "mean",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [
+                                    "host"
+                                ],
+                                "measurement": "zookeeper.write-catalog.bytes",
+                                "query": "SELECT mean(value) FROM \"zookeeper.write-catalog.bytes\" WHERE $timeFilter GROUP BY time($interval), \"host\"",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Zookeeper Write Catalog Bytes",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 9,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "mean",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [
+                                    "host"
+                                ],
+                                "measurement": "zookeeper.read-catalog.latency",
+                                "query": "SELECT mean(value) FROM \"zookeeper.read-catalog.latency\" WHERE $timeFilter GROUP BY time($interval), \"host\"",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Zookeeper Read Catalog Latency",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    }
+                ],
+                "title": "New row"
+            },
+            {
+                "collapse": false,
+                "editable": true,
+                "height": "250px",
+                "panels": [
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 10,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "mean",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [
+                                    "host"
+                                ],
+                                "measurement": "zookeeper.write-flow-conditions.latency",
+                                "query": "SELECT mean(value) FROM \"zookeeper.write-flow-conditions.latency\" WHERE $timeFilter GROUP BY time($interval), \"host\"",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Zookeeper Write Flow Conditions Latency",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 11,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "mean",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [
+                                    "host"
+                                ],
+                                "measurement": "zookeeper.write-flow-conditions.bytes",
+                                "query": "SELECT mean(value) FROM \"zookeeper.write-flow-conditions.bytes\" WHERE $timeFilter GROUP BY time($interval), \"host\"",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Zookeeper Write Flow Conditions Bytes",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 12,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "mean",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [
+                                    "host"
+                                ],
+                                "measurement": "zookeeper.read-flow-conditions.latency",
+                                "query": "SELECT mean(value) FROM \"zookeeper.read-flow-conditions.latency\" WHERE $timeFilter GROUP BY time($interval), \"host\"",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Zookeeper Read Flow Conditions Latency",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    }
+                ],
+                "title": "New row"
+            },
+            {
+                "collapse": false,
+                "editable": true,
+                "height": "250px",
+                "panels": [
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 13,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "mean",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [
+                                    "host"
+                                ],
+                                "measurement": "zookeeper.write-lifecycles.latency",
+                                "query": "SELECT mean(value) FROM \"zookeeper.write-lifecycles.latency\" WHERE $timeFilter GROUP BY time($interval), \"host\"",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Zookeeper Write Lifecycles Latency",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 14,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "mean",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [
+                                    "host"
+                                ],
+                                "measurement": "zookeeper.write-lifecycles.bytes",
+                                "query": "SELECT mean(value) FROM \"zookeeper.write-lifecycles.bytes\" WHERE $timeFilter GROUP BY time($interval), \"host\"",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Zookeeper Write Lifecycles Bytes",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 15,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "mean",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [
+                                    "host"
+                                ],
+                                "measurement": "zookeeper.read-lifecycles.latency",
+                                "query": "SELECT mean(value) FROM \"zookeeper.read-lifecycles.latency\" WHERE $timeFilter GROUP BY time($interval), \"host\"",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Zookeeper Read Lifecycles Latency",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    }
+                ],
+                "title": "New row"
+            },
+            {
+                "collapse": false,
+                "editable": true,
+                "height": "250px",
+                "panels": [
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 16,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "mean",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [
+                                    "host"
+                                ],
+                                "measurement": "zookeeper.write-task.latency",
+                                "query": "SELECT mean(value) FROM \"zookeeper.write-task.latency\" WHERE $timeFilter GROUP BY time($interval), \"host\"",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Zookeeper Write Task Latency",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 17,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "mean",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [
+                                    "host"
+                                ],
+                                "measurement": "zookeeper.write-task.bytes",
+                                "query": "SELECT mean(value) FROM \"zookeeper.write-task.bytes\" WHERE $timeFilter GROUP BY time($interval), \"host\"",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Zookeeper Write Task Bytes",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 18,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "mean",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [
+                                    "host"
+                                ],
+                                "measurement": "zookeeper.read-task.latency",
+                                "query": "SELECT mean(value) FROM \"zookeeper.read-task.latency\" WHERE $timeFilter GROUP BY time($interval), \"host\"",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Zookeeper Read Task Latency",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    }
+                ],
+                "title": "New row"
+            },
+            {
+                "collapse": false,
+                "editable": true,
+                "height": "250px",
+                "panels": [
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 19,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "mean",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [
+                                    "host"
+                                ],
+                                "measurement": "zookeeper.write-chunk.latency",
+                                "query": "SELECT mean(value) FROM \"zookeeper.write-chunk.latency\" WHERE $timeFilter GROUP BY time($interval), \"host\"",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Zookeeper Write Chunk Latency",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 20,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "mean",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [
+                                    "host"
+                                ],
+                                "measurement": "zookeeper.write-chunk.bytes",
+                                "query": "SELECT mean(value) FROM \"zookeeper.write-chunk.bytes\" WHERE $timeFilter GROUP BY time($interval), \"host\"",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Zookeeper Write Chunk Bytes",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 21,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "mean",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [
+                                    "host"
+                                ],
+                                "measurement": "zookeeper.read-chunk.latency",
+                                "query": "SELECT mean(value) FROM \"zookeeper.read-chunk.latency\" WHERE $timeFilter GROUP BY time($interval), \"host\"",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Zookeeper Read Chunk Latency",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    }
+                ],
+                "title": "New row"
+            },
+            {
+                "collapse": false,
+                "editable": true,
+                "height": "250px",
+                "panels": [
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 22,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "mean",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [
+                                    "host"
+                                ],
+                                "measurement": "zookeeper.write-job-scheduler.latency",
+                                "query": "SELECT mean(value) FROM \"zookeeper.write-job-scheduler.latency\" WHERE $timeFilter GROUP BY time($interval), \"host\"",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Zookeeper Write Job Scheduler Latency",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 23,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "mean",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [
+                                    "host"
+                                ],
+                                "measurement": "zookeeper.write-job-scheduler.bytes",
+                                "query": "SELECT mean(value) FROM \"zookeeper.write-job-scheduler.bytes\" WHERE $timeFilter GROUP BY time($interval), \"host\"",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Zookeeper Write Job Scheduler Bytes",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 24,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "mean",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [
+                                    "host"
+                                ],
+                                "measurement": "zookeeper.read-job-scheduler.latency",
+                                "query": "SELECT mean(value) FROM \"zookeeper.read-job-scheduler.latency\" WHERE $timeFilter GROUP BY time($interval), \"host\"",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Zookeeper Read Job Scheduler Latency",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    }
+                ],
+                "title": "New row"
+            },
+            {
+                "collapse": false,
+                "editable": true,
+                "height": "250px",
+                "panels": [
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 25,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "mean",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [
+                                    "host"
+                                ],
+                                "measurement": "zookeeper.write-messaging.latency",
+                                "query": "SELECT mean(value) FROM \"zookeeper.write-messaging.latency\" WHERE $timeFilter GROUP BY time($interval), \"host\"",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Zookeeper Write Messaging Latency",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 26,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "mean",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [
+                                    "host"
+                                ],
+                                "measurement": "zookeeper.write-messaging.bytes",
+                                "query": "SELECT mean(value) FROM \"zookeeper.write-messaging.bytes\" WHERE $timeFilter GROUP BY time($interval), \"host\"",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Zookeeper Write Messaging Bytes",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 27,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "mean",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [
+                                    "host"
+                                ],
+                                "measurement": "zookeeper.read-messaging.latency",
+                                "query": "SELECT mean(value) FROM \"zookeeper.read-messaging.latency\" WHERE $timeFilter GROUP BY time($interval), \"host\"",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Zookeeper Read Messaging Latency",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    }
+                ],
+                "title": "New row"
+            },
+            {
+                "collapse": false,
+                "editable": true,
+                "height": "250px",
+                "panels": [
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 30,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "mean",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [
+                                    "host"
+                                ],
+                                "measurement": "zookeeper.write-origin.latency",
+                                "query": "SELECT mean(value) FROM \"zookeeper.write-origin.latency\" WHERE $timeFilter GROUP BY time($interval), \"host\"",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Zookeeper Write Origin Latency",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 31,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "mean",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [
+                                    "host"
+                                ],
+                                "measurement": "zookeeper.write-origin.bytes",
+                                "query": "SELECT mean(value) FROM \"zookeeper.write-origin.bytes\" WHERE $timeFilter GROUP BY time($interval), \"host\"",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Zookeeper Write Origin Bytes",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 32,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "mean",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [
+                                    "host"
+                                ],
+                                "measurement": "zookeeper.read-origin.latency",
+                                "query": "SELECT mean(value) FROM \"zookeeper.read-origin.latency\" WHERE $timeFilter GROUP BY time($interval), \"host\"",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Zookeeper Read Origin Latency",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    }
+                ],
+                "title": "New row"
+            },
+            {
+                "collapse": false,
+                "editable": true,
+                "height": "250px",
+                "panels": [
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 28,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "mean",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [
+                                    "host"
+                                ],
+                                "measurement": "zookeeper.force-write-chunk.latency",
+                                "query": "SELECT mean(value) FROM \"zookeeper.force-write-chunk.latency\" WHERE $timeFilter GROUP BY time($interval), \"host\"",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Zookeeper Force Write Chunk Latency",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 29,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "mean",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [
+                                    "host"
+                                ],
+                                "measurement": "zookeeper.force-write-chunk.bytes",
+                                "query": "SELECT mean(value) FROM \"zookeeper.force-write-chunk.bytes\" WHERE $timeFilter GROUP BY time($interval), \"host\"",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Zookeeper Force Write Chunk Bytes",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    }
+                ],
+                "title": "New row"
+            },
+            {
+                "collapse": false,
+                "editable": true,
+                "height": "250px",
+                "panels": [
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "grid": {
+                            "leftLogBase": 1,
+                            "leftMax": null,
+                            "leftMin": null,
+                            "rightLogBase": 1,
+                            "rightMax": null,
+                            "rightMin": null,
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "id": 33,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "mean",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [
+                                    "host"
+                                ],
+                                "measurement": "zookeeper.gc-log-entry.latency",
+                                "query": "SELECT mean(value) FROM \"zookeeper.gc-log-entry.latency\" WHERE $timeFilter GROUP BY time($interval), \"host\"",
+                                "tags": []
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Zookeeper GC Log Entry Latency",
+                        "tooltip": {
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "graph",
+                        "x-axis": true,
+                        "y-axis": true,
+                        "y_formats": [
+                            "short",
+                            "short"
+                        ]
+                    },
+                    {
+                        "cacheTimeout": null,
+                        "colorBackground": false,
+                        "colorValue": false,
+                        "colors": [
+                            "rgba(245, 54, 54, 0.9)",
+                            "rgba(237, 129, 40, 0.89)",
+                            "rgba(50, 172, 45, 0.97)"
+                        ],
+                        "datasource": "InfluxDB",
+                        "editable": true,
+                        "error": false,
+                        "format": "none",
+                        "id": 34,
+                        "interval": null,
+                        "links": [],
+                        "maxDataPoints": 100,
+                        "nullPointMode": "connected",
+                        "nullText": null,
+                        "postfix": "",
+                        "postfixFontSize": "50%",
+                        "prefix": "",
+                        "prefixFontSize": "50%",
+                        "span": 4,
+                        "sparkline": {
+                            "fillColor": "rgba(31, 118, 189, 0.18)",
+                            "full": false,
+                            "lineColor": "rgb(31, 120, 193)",
+                            "show": false
+                        },
+                        "targets": [
+                            {
+                                "fields": [
+                                    {
+                                        "func": "max",
+                                        "name": "value"
+                                    }
+                                ],
+                                "groupByTags": [],
+                                "measurement": "zookeeper.gc-log-entry.position",
+                                "query": "SELECT max(value) FROM \"zookeeper.gc-log-entry.position\" WHERE $timeFilter GROUP BY time($interval)",
+                                "tags": []
+                            }
+                        ],
+                        "thresholds": "",
+                        "title": "ZooKeeper GC Log Entry Position",
+                        "type": "singlestat",
+                        "valueFontSize": "80%",
+                        "valueMaps": [
+                            {
+                                "op": "=",
+                                "text": "N/A",
+                                "value": "null"
+                            }
+                        ],
+                        "valueName": "avg"
+                    }
+                ],
+                "title": "New row"
+            }
+        ],
+        "nav": [
+            {
+                "collapse": false,
+                "enable": true,
+                "notice": false,
+                "now": false,
+                "refresh_intervals": [
+                    "5s",
+                    "10s",
+                    "30s",
+                    "1m",
+                    "5m",
+                    "15m",
+                    "30m",
+                    "1h",
+                    "2h",
+                    "1d"
+                ],
+                "status": "Stable",
+                "time_options": [
+                    "5m",
+                    "15m",
+                    "1h",
+                    "6h",
+                    "12h",
+                    "24h",
+                    "2d",
+                    "7d",
+                    "30d"
+                ],
+                "type": "timepicker"
+            }
+        ],
+        "time": {
+            "from": "2015-08-08T20:33:04.180Z",
+            "to": "2015-08-08T20:38:09.759Z"
+        },
+        "templating": {
+            "list": []
+        },
+        "annotations": {
+            "list": []
+        },
+        "schemaVersion": 6,
+        "version": 45,
+        "links": []
+    }
+}
