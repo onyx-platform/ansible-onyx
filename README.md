@@ -127,6 +127,10 @@ Onyx Dashboard is deployed onto one machine. See it's logs with:
 $ docker logs onyx-dashboard
 ```
 
+### Acknowledgements
+
+Many thanks to Flybot Pte. Ltd., for allowing this work to be open sourced and contributed back too the community.
+
 ### License
 
 Copyright © 2015 Distributed Masonry LLC
