@@ -129,7 +129,7 @@ $ docker logs onyx-dashboard
 
 ### Acknowledgements
 
-Many thanks to Flybot Pte. Ltd., for allowing this work to be open sourced and contributed back too the community.
+Many thanks to Flybot Pte. Ltd., for allowing this work to be open sourced and contributed back to the community.
 
 ### License
 
