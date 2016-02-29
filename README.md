@@ -1,5 +1,7 @@
 ## ansible-onyx
 
+###This repository is currently behind our most recent Ansible developments. We are working on updating ansible-onyx but for now, you can see https://github.com/onyx-platform/onyx-benchmark
+
 Ansible playbook for creating a cluster to support Onyx programs. Installs ZooKeeper, Kafka, Riemann, Datomic, Grafana, InfluxDB, and the Onyx Dashboard. Most installs are clustered, and are distributed through Docker.
 
 ## Installation
